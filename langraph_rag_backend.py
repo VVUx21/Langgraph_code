@@ -21,15 +21,9 @@ import requests
 
 load_dotenv()
 
-# -------------------
-# 1. LLM + embeddings
-# -------------------
 llm = ChatOpenAI(model="gpt-4o-mini")
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
-# -------------------
-# 2. PDF retriever store (per thread)
-# -------------------
 _THREAD_RETRIEVERS: Dict[str, Any] = {}
 _THREAD_METADATA: Dict[str, dict] = {}
 
